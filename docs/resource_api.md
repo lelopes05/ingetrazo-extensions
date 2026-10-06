@@ -31,13 +31,20 @@ export_resource(resource_id)
 import_resource(payload)
 ```
 
-A universal package file format is intentionally left for a later block.
-That lets real providers reveal what a portable bundle actually needs before
-the core freezes a format.
-
-
 ## Portable bundles
 
 `core.resource_bundle` adds the experimental `.iglib` container for exporting
 one resource with its dependencies and importing it elsewhere. See
 `docs/resource_bundle.md`.
+
+## Production-oriented API consumer
+
+The first production-oriented consumer driving these requirements is
+[OpenTrace BIM](docs/opentrace_bim_consumer.md), an actively developed
+parametric architecture/BIM toolkit for IngeTrazo. Its real resource cases
+include construction assemblies, complete element presets, reusable complex
+profiles, structural catalogues and portable office libraries.
+
+Keeping those architectural schemas in the extension while the core owns only
+generic discovery, dependency and portability mechanics is the intended API
+boundary.
